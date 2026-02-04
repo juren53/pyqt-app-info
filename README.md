@@ -86,6 +86,11 @@ process is running from source or a bundled executable.
 | PyInstaller one-file | `"Compiled executable"` | `True` | `"PyInstaller"` |
 | cx_Freeze | `"Compiled executable"` | `True` | `"cx_Freeze"` |
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for version history, or view the
+[latest release](https://github.com/juren53/pyqt-app-info/releases/latest) on GitHub.
+
 ## License
 
 MIT
