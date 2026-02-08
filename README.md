@@ -8,6 +8,8 @@ provides a ready-made About dialog.
 
 ## Installation
 
+### From PyPI
+
 **Core only** (stdlib, zero dependencies):
 
 ```bash
@@ -18,6 +20,18 @@ pip install pyqt-app-info
 
 ```bash
 pip install pyqt-app-info[qt]
+```
+
+### From Local Repository
+
+```bash
+python -m pip install C:\Users\jimur\Projects\pyqt-app-info
+```
+
+### From GitHub
+
+```bash
+pip install git+https://github.com/juren53/pyqt-app-info
 ```
 
 ## Quick Start
