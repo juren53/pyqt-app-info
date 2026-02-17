@@ -9,9 +9,18 @@ from __future__ import annotations
 
 import shutil
 import subprocess
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional
+
+# Windows console window hiding constants
+if sys.platform.startswith('win'):
+    _CREATE_NO_WINDOW = 0x08000000
+    _SW_HIDE = 0
+else:
+    _CREATE_NO_WINDOW = 0
+    _SW_HIDE = 0
 
 
 @dataclass
@@ -118,11 +127,20 @@ class ToolRegistry:
 
         # Try to get version
         try:
+            run_kwargs: dict = {
+                'capture_output': True,
+                'text': True,
+                'timeout': spec.version_timeout,
+            }
+            if sys.platform.startswith('win'):
+                startupinfo = subprocess.STARTUPINFO()
+                startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+                startupinfo.wShowWindow = _SW_HIDE
+                run_kwargs['startupinfo'] = startupinfo
+                run_kwargs['creationflags'] = _CREATE_NO_WINDOW
             proc = subprocess.run(
                 [path, spec.version_flag],
-                capture_output=True,
-                text=True,
-                timeout=spec.version_timeout,
+                **run_kwargs,
             )
             if proc.returncode == 0:
                 version = proc.stdout.strip().split("\n")[0]
