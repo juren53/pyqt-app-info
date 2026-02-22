@@ -1,0 +1,16 @@
+
+
+python -m pip install C:\Users\jimur\Projects\pyqt-app-info
+
+Defaulting to user installation because normal site-packages is not writeable
+Processing C:\Users\jimur\Projects\pyqt-app-info
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Building wheels for collected packages: pyqt-app-info
+  Building wheel for pyqt-app-info (pyproject.toml) ... done
+  Created wheel for pyqt-app-info: filename=pyqt_app_info-0.1.0-py3-none-any.whl size=10527 sha256=704dfab795137f71cb490e78cbd32dc451308247483219a72450e7b5c1dd843a
+  Stored in directory: c:\users\jimur\appdata\local\pip\cache\wheels\10\15\20\843b8e00cc1f5692ed2613e40b4564b80ffd104c00cb47a6f8
+Successfully built pyqt-app-info
+Installing collected packages: pyqt-app-info
+Successfully installed pyqt-app-info-0.1.0
